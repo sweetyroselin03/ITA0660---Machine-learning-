@@ -1,0 +1,22 @@
+#Q8
+
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+data = {
+    'YearsExperience':[1.1,1.5,2.0,3.2,4.0,5.1,6.0,7.0,8.0],
+    'Salary':[39343,46205,43525,54445,57189,66029,81363,93940,101302]
+}
+
+df = pd.DataFrame(data)
+
+X = df[['YearsExperience']]
+y = df['Salary']
+
+model = LinearRegression()
+model.fit(X, y)
+
+experience = [[6.5]]
+predicted_salary = model.predict(experience)
+
+print("Predicted Salary:", predicted_salary[0])
